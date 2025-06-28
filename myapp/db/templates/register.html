@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-md-6 col-lg-4 p-4 rounded" style="background-color: hsl(199, 92.10%, 75.30%);">
+            <h3 class="text-center">Register</h3>
+            
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="reg_number" class="form-label">Register Number</label>
+                        <input type="text" class="form-control" id="reg_number" name="register_number" required>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-sm-12">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select name="gender" id="gender" class="form-control" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 mt-3">
+                        <label for="birthday">Birthday</label>
+                        <input type="datetime-local" name="birthday" id="birthday" class="form-control">
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-sm-12">
+                        <label for="year" class="form-label">Current Studying Year</label>
+                        <select name="year" id="year" class="form-control" required>
+                            <option value="">Select</option>
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12 col-sm-9">
+                        <label for="degree-type" class="form-label">Degree Type</label>
+                        <select id="degree-type" class="form-control" name="degree_type" required onchange="updateCourses()">
+                            <option value="">Select</option>
+                            <option value="ug">Undergraduate (UG)</option>
+                            <option value="pg">Postgraduate (PG)</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-sm-9">
+                        <label for="course" class="form-label">Course</label>
+                        <select id="course" class="form-control" name="course" required>
+                            <option value="">Select Degree Type First</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 mt-2">
+                    <label for="department" class="form-label">Department</label>
+                    <input type="text" class="form-control" id="department" name="department" required>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="profile_photo" class="form-label">Profile Photo</label>
+                    <input type="file" class="form-control" name="profile_photo" id="profile_photo">
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12 col-sm-9">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="col-12 col-sm-9">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                    </div>
+                </div>
+
+                <div class="my-3 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateCourses() {
+        const degreeType = document.getElementById("degree-type").value;
+        const courseDropdown = document.getElementById("course");
+
+        // Clear existing options
+        courseDropdown.innerHTML = '<option value="">Select</option>';
+
+        if (degreeType === "ug") {
+            const ugCourses = ["B.E", "B.Tech", "B.A", "B.Sc"];
+            ugCourses.forEach(course => {
+                let option = document.createElement("option");
+                option.value = course;
+                option.textContent = course;
+                courseDropdown.appendChild(option);
+            });
+        } else if (degreeType === "pg") {
+            const pgCourses = ["M.E", "M.Tech", "M.A", "M.Sc"];
+            pgCourses.forEach(course => {
+                let option = document.createElement("option");
+                option.value = course;
+                option.textContent = course;
+                courseDropdown.appendChild(option);
+            });
+        }
+    }
+</script>
+{% endblock %}

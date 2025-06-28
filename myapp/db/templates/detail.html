@@ -1,0 +1,14 @@
+{% include "base.html" %} 
+{% block content %}
+  <div class="container-fluid ">
+        
+          <div class="row justify-content-center ">
+              <div class="col-lg-8 text-center " >
+                <h1 class="mb-4">{{post.title}} </h1>
+                <img style='align-item:center' src="{{post.img.url}}" class="img-fluid d-block mx-auto mb-4" alt="{{  post.title  }}">
+                <h2 style='text-align center; background-color:green;color:white'> Description</h2>
+                <p class='text-justify'>{{post.content}}</p>
+              </div>
+          </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% include "base.html" %}
+
+{% block  content %}
+
+    <!---sid enavbar-->
+
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+         
+        {% if success_message %}
+ 
+                    <div class="alert  alert-success " role="alert">
+                             {{ message }}
+                    </div>
+        {% endif %}
+
+       <form method="POST" action="" class="contact-form">
+            {% csrf_token %}
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+        </form>
+
+    
+
+    <!---footer-->
+   
+
+
+</body>
+
+</html>
+
+{% endblock %}

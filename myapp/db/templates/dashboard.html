@@ -1,0 +1,39 @@
+{% include "base.html" %}
+{% block content %}
+  <div class="container-fluid ">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 rounded" style="background-color: hsl(199, 69%, 49%);">
+                <h3 class="text-center">Dashboard</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2 p-4 rounded" style="background-color:hsl(199, 69%, 49%)">
+    <div class="row align-items-center">
+        <!-- Text Block (70%) -->
+        <div class="col-12 col-md-8 order-2 order-md-1">
+            <div class="col-12 border border-light animate-fly mb-2"><h5 class="text-white">Name :   {{dashboard.user.username}}</h5></div>
+            <div class="col-12 border border-light info-box animate-fly mb-2"><h5 class="text-white">Email :  {{dashboard.email}}</h5></div>
+            <div class="col-12 border border-light info-box animate-fly mb-2"><h5 class="text-white">Degree : {{dashboard.degree_type}}-{{dashboard.course}}</h5></div>
+            <div class="col-12 border border-light info-box animate-fly mb-2"><h5 class="text-white">Year   :  {{dashboard.year}}</h5></div>
+            <div class="col-12 border border-light info-box animate-fly mb-2"><h5 class="text-white">Register Number  : {{dashboard.register_number}}</h5></div>
+            <div class="col-12 border border-light info-box animate-fly mb-2"><h5 class="text-white">D.O.B  :{{dashboard.birthday |date:"d M Y"}}</h5></div>
+        </div>
+
+        <!-- Image Block (30%) -->
+        {% if dashboard.profile_photo %}
+
+                <div class="col-12 col-md-4 text-center order-1 order-md-2 mb-3 mb-md-0">
+                    <img src="{{dashboard.profile_photo.url}}" class="img-fluid rounded shadow" alt="Profile Image">
+
+                </div>
+        {% else %}
+             <div class="col-12 col-md-4 text-center order-1 order-md-2 mb-3 mb-md-0">
+                    <img src="https://picsum.photos/250" class="img-fluid rounded shadow" alt="Profile Image">
+                </div>
+        {% endif %}     
+        </div>
+    </div>
+    <div class='d-flex justify-content-center mt-4'>
+        <a class='text-decoration-none btn btn-success'href='{% url 'db:edit_profile' %}'>Edit Profile</a>  
+
+{% endblock %}

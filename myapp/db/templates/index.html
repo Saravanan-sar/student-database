@@ -1,0 +1,120 @@
+{% include "base.html" %} 
+{% block content %}
+  <div class="container mt-4">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-3 text-center">
+        <img style="height: 300px;" src="/media/profile_photos/avs logo.jpg" class="img-fluid rounded">
+      </div>
+      
+      <div class="col-sm-12 col-md-9 text-center text-md-center text-white bg-primary">
+        <h1 class="p-3">AVS ENGINEERING COLLEGE </h1>
+        <p>Approved by AICTE,NEW DELHI | Affilated to ANNa UNIVERSITY,chennai</p>
+        <p>Recognized undef 2(f) of UGC Act 1956</p>
+        <p>ISO 9001:2015 Certified Institution</p>
+        <p class=" display-7">Address : Millitary Road,Ammapet,Salem-636003
+          ,Tamil Nadu , India 
+        </p>
+        <p>Contact: +91-94427-00200</p>
+      </div>
+    </div>
+    <h1 class="p-2 text-center">WE CREATE RESPONSIBLE ENGINEERS</h1>
+  <div class="var">
+    <p>
+      AVS Engineering College is a prominent educational institution established in the year 2008. It is located in the heart of Salem city. With more than two decades of experience, AVSEC aims to impart quality education in the fields of Engineering, Technology and Business Administration. Apart from education, the college focuses on creating Responsible Engineers in order to serve the society. It offers 8 UG courses & 8 PG courses.
+      <br>
+      Well-experienced Faculty Team, State- of- Art- Laboratories, Hi-Tech Infrastructure, Parental Guidance, Advanced Teaching- Learning Process led by Internal Quality Assurance Cell, Well- equipped Gym, Digitalized Library, Spacious classrooms and Seminar halls, Separate blocks for Boys Hostel and Girls Hostel and recognition of Sports talent pave way to AVSEC attaining good reputation in Salem District. Placement records, MOU's,Centre of Excellence, Clubs and Cells add more feathers to the cap of the college.
+    </p>
+    <h1> INSTITUTE MISSION</h1>
+      <P>To be a premier institution committed to fostering excellence in education, research, and innovation, producing globally competent engineers who contribute to societal development.</P>
+    
+      </P>
+  </div>
+  </div>
+  
+
+    
+  <div style="background-color: hsl(199, 69%, 49%);" class="container bg-site pb-4">
+    <div class="text-center mx-auto m-3 pt-3 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+      <h1 class="display-6 text-white">Programmes Offered </h1>
+    </div>
+    <div class="row g-4  text-white justify-content-center">
+      <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <div class="courses-item d-flex flex-column overflow-hidden h-100">
+          <div class="p-4 pt-0">
+            <div   class="center">
+              <h4 class="text-warning p-2">Under Graduate Programmes </h4>
+              <h4 style='background-color: hsl(199, 35.90%, 70.00%)' class="text-white p-2">B.Tech</h4>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item"> B.Tech Artificial Intelligence &amp; Data Science</li>
+              <li class="list-group-item"> B.Tech Information Technology</li>
+            </ul>
+            <div class="center">
+              <h4 style='background-color: hsl(199, 35.90%, 70.00%)' class="text-white p-2">B.E</h4>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item"> B.E. Biomedical Engineering</li>
+              <li class="list-group-item"> B.E. Computer Science Engineering</li>
+              <li class="list-group-item">B.E Computer Science Engineering (AI&amp;ML)* </li>
+              <li class="list-group-item"> B.E. Civil Engineering</li>
+              <li class="list-group-item"> B.E. Electrical &amp; Electronics Engineering</li>
+              <li class="list-group-item"> B.E. Electronics &amp; Communication Engineering</li>
+              <li class="list-group-item"> B.E. Mechanical Engineering</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+        <div class="courses-item d-flex flex-column overflow-hidden h-100">
+          <div class="p-4 pt-0">
+            <div class="center">
+              <h4 class="text-warning p-2">Post Graduate Programmes</h4>
+              <h4 style='background-color: hsl(199, 35.90%, 70.00%)' class="text-white p-2">M.E</h4>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item"> M.E. Computer Science &amp; Engineering </li>
+              <li class="list-group-item">M.E Computer Science Engineering (AI&amp;ML)* </li>
+              <li class="list-group-item"> M.E. VLSI Design </li>
+              <li class="list-group-item"> M.E. Power Electronics and Drives </li>
+              <li class="list-group-item"> M.E. Structural Engineering </li>
+              <li class="list-group-item"> M.E. Engineering Design </li>
+            </ul>
+            <div class="center">
+              <h4 style='background-color: hsl(199, 35.90%, 70.00%)' class="text-white  p-2">Master of Business Administration (MBA)</h4>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item"> Marketing, HR, Finance &amp; Business Analytics</li>
+            </ul>
+            <div class="center">
+              <h4 style='background-color: hsl(199, 35.90%, 70.00%)' class="text-white  p-2">Computer Applications</h4>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item"> Master of Computer Applications (M.C.A) </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="function">
+    <p style='background-color: black '>{{blog}}</p>
+    {% for post in posts %}
+
+      <div class="classw container mt-3">
+          <div class=" row d-flex gap-3  mt-5 ">
+              <img class="col-lg-3 col-sm-12 " src="{{post.img.url}}" alt="avs" style="height: 100px; width: 100px%;">
+
+                <div class="col-lg-6 col-sm-12">
+                    <h2 style='color: white'>{{post.title}}</h2>
+                    <p>{{post.content | truncatewords:10}}</p>
+                </div>
+          </div> 
+          <a href="{% url 'db:detail' post_id=post.id %}" class="btn btn-primary">Read More</a>  
+      </div> 
+    {% endfor %}
+  </div>
+
+{% endblock %}
